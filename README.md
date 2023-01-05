@@ -11,3 +11,7 @@
 TypeORM
 SOLID
 Kafka - (upstash)
+
+---
+
+* Início das configurações do Pipiline
