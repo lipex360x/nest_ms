@@ -24,5 +24,7 @@
       "@modules/*": ["./src/modules/*"],
       "@test/*": ["./test/*"]
     }
-  }
+  },
+  
+  "include": ["src", "generators", "test"],
 }
