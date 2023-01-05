@@ -21,8 +21,6 @@ export class CreateNotificationUseCase {
       .step(this.validateCategory)
       .run()
 
-    console.log(response)
-
     const notification = this.repository.create(response)
 
     await this.repository.save(notification)

@@ -1,21 +1,13 @@
-import {
-  IPipelineBuilder,
-  IPipelineHandler,
-  IPipelineStep,
-} from './pipeline-builder.interface'
-
-export abstract class AbstractPipelineBuilder
-  implements IPipelineStep, IPipelineBuilder
-{
+export abstract class AbstractPipelineBuilder {
   protected steps = []
   protected data: unknown
 
-  public input(data: unknown): IPipelineStep {
+  public input(data: unknown) {
     this.data = data
     return this
   }
 
-  public step<T extends IPipelineHandler>(handler: T): IPipelineStep {
+  public step(handler: unknown) {
     this.steps.push(handler)
     return this
   }

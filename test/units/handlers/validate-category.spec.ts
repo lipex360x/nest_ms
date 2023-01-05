@@ -25,8 +25,11 @@ describe('ValidateCategoryHandler', () => {
     const notification = makeNotification({ category: '' })
     const spySutHandle = jest.spyOn(validation, 'handle')
 
+    // act
+    const validate = validation.handle(notification)
+
     // assert
-    expect(() => validation.handle(notification)).rejects.toThrow(
+    expect(async () => await validate).rejects.toThrow(
       new BadRequestException(InvalidCategory)
     )
     expect(spySutHandle).toHaveBeenCalledTimes(1)
