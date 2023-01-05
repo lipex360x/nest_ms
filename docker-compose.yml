@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  postgresdb:
+    image: postgres
+    container_name: ${TYPEORM_CONTAINER_NAME}
+    ports:
+      - "${TYPEORM_PORT}:5432"
+    environment:
+      POSTGRES_PASSWORD: "${TYPEORM_PASSWORD}"
+      POSTGRES_DB: "${TYPEORM_DATABASE}"
