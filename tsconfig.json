@@ -26,5 +26,5 @@
     }
   },
   
-  "include": ["src", "generators", "test"],
+  "include": ["src", "generators", "test"]
 }

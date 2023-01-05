@@ -1,4 +1,8 @@
-import { IPipelineBuilder, IPipelineHandler, IPipelineStep } from './interfaces'
+import {
+  IPipelineBuilder,
+  IPipelineHandler,
+  IPipelineStep,
+} from './pipeline-builder.interface'
 
 export abstract class AbstractPipelineBuilder
   implements IPipelineStep, IPipelineBuilder
@@ -21,7 +25,7 @@ export abstract class AbstractPipelineBuilder
     const input = this.data
 
     for (const step of this.steps) {
-      response = await step.handle(input)
+      response = await step.handler(input)
       Object.assign(input as object, response)
     }
 

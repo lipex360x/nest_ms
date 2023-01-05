@@ -1,4 +1,4 @@
-export interface NotificationRequest {
+export interface NotificationRequestDto {
   category: string
   content: string
   recipientId: string
